@@ -14,6 +14,12 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  background: url("https://images5.alphacoders.com/431/431462.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .container {
@@ -22,36 +28,100 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
-* {
+/* * {
   border: 1px solid black;
-}
+} */
 
 .calc-box {
   height: 500px;
   width: 100%;
   border-radius: 92% 8% 92% 8% / 9% 94% 6% 91%;
-  background-color: #aef5e7;
+  background-color: #a9d7f6;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .result {
-  background-color: #f47c6d;
+  background-color: #f96d6d;
   width: 360px;
   height: 100px;
   margin-top: 30px;
-  border-radius: 89% 11% 77% 23% / 22% 98% 2% 78%;
+  border-radius: 34% 39% 14% 39% / 29% 37% 43% 62%;
+}
+
+.digit:hover {
+  cursor: pointer;
+  background-color: #aef5e7;
+}
+.sign:hover {
+  cursor: pointer;
+  background-color: #f16896;
+}
+
+.butoane1 {
+  background-color: #b84d69;
+  width: 350px;
+  margin-top: 8px;
+  height: 55%;
+  border-radius: 89% 11% 100% 0% / 12% 91% 9% 88%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.butoane2 {
+  background-color: #b84d69;
+  width: 350px;
+  height: 15%;
+  border-radius: 89% 11% 81% 19% / 16% 71% 29% 84%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.butoane2 > button {
+  flex: 1;
+  border-radius: 40% 60% 51% 49% / 48% 64% 36% 52%;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+}
+.butoane2 > .digit {
+  flex-grow: 2;
 }
 
 button {
-  max-height: 25px;
+  border: 2px solid #8fb1e9;
+}
+h2 {
+  margin-bottom: 1px;
+  font-family: Lucida Sans Typewriter;
 }
 .butoane1 {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  flex: auto;
+  justify-content: space-between;
+}
+
+.butoane1 .sign,
+.butoane1 .digit {
+  flex-basis: calc(25% - 10px);
+  margin: 5px;
+  border-radius: 40% 60% 51% 49% / 48% 64% 36% 52%;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
 }
