@@ -52,9 +52,88 @@ btn.forEach((button) => {
         }
       }
       result.innerHTML += value; // we also add the display to the screen
+      // DECIMAL POINTS
+    } else if (value === ".") {
+      if (displayResult) {
+        // we wanna display 0 dot something if the dot is clicked first
+        firstNum = "0.";
+        displayResult = false;
+        result.textContent = "0.";
+      } else {
+        if (operator) {
+          // handling the decimal for the second numeber
+          if (!secondNum.includes(".")) {
+            if (secondNum === "") {
+              secondNum = "0.";
+              result.textContent += "0.";
+            } else {
+              secondNum += ".";
+              result.textContent += ".";
+            }
+          }
+        } else {
+          // handling the decimals for the first number
+          if (!firstNum.includes(".")) {
+            if (firstNum === "") {
+              firstNum = "0.";
+              result.textContent = "0.";
+            } else {
+              firstNum += ".";
+              result.textContent += ".";
+            }
+          }
+        }
+      }
+    }
+    // NEGATIVE SIGN
+    else if (value === "-") {
+      if (operator === "" && firstNum === "") {
+        // If no operator and no firstNum, treat "-" as part of firstNum
+        firstNum = "-";
+        result.textContent = "-";
+      } else if (operator && secondNum === "") {
+        // If operator is set and no secondNum, treat "-" as part of secondNum
+        secondNum = "-";
+        result.textContent += "-";
+      } else {
+        // Otherwise, treat "-" as an operator
+        operator = value;
+        result.textContent += value;
+      }
+    }
+    // BACKWARDS OPERATOR
+    else if (value === "<=") {
+      if (displayResult) {
+        // If the result is displayed, clear everything
+        firstNum = "";
+        secondNum = "";
+        operator = "";
+        result.textContent = "";
+        displayResult = false;
+      } else {
+        if (operator) {
+          // for secondnum
+          if (secondNum.length > 0) {
+            secondNum = secondNum.slice(0, -1); // removes the last character
+            result.textContent = result.textContent.slice(0, -1); // display update
+          } else {
+            // if secondNum is empty we remove the operator
+            operator = "";
+            result.textContent = result.textContent.slice(0, -1);
+          }
+        } else {
+          // for firstnum
+          if (firstNum.length > 0) {
+            firstNum = firstNum.slice(0, -1); // Remove last character
+            result.textContent = result.textContent.slice(0, -1); // Update display
+          }
+        }
+      }
+      // OPERATORS
     } else if (value == "+" || value == "-" || value == "/" || value == "*") {
       operator = value; // if an operator is clicked the operator var. gets updated and displayed
       result.innerHTML += `${value}`;
+      // EQUAL SIGN
     } else if (value == "=") {
       // here if the equal sign is clicked we start to calculate the values we got
       let rez; // to store the result
@@ -77,12 +156,13 @@ btn.forEach((button) => {
         default:
           rez = "Error";
       }
-
+      // EMPTYING THE VARIABLES AFTER CALCULATIONS
       result.innerHTML = rez; // we display the result on the screen and reset the variables
       firstNum = rez; // first num becommes the result if we want to do antoher operation with it
       secondNum = "";
       operator = "";
       displayResult = true;
+      // THE C BUTTON
     } else if (value == "C") {
       // if C is clicked then everything gets 'erased'
       firstNum = "";
