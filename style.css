@@ -14,7 +14,7 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background: url("https://images2.alphacoders.com/132/thumb-1920-1329828.jpeg")
+  background: url("https://images3.alphacoders.com/114/thumb-1920-1148433.jpg")
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -24,12 +24,10 @@ body {
 
 .container {
   height: 100%;
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: 10px;
 }
 
 /* * {
@@ -37,77 +35,81 @@ body {
 } */
 
 .calc-box {
-  height: 500px;
-  width: 100%;
-  border-radius: 92% 8% 92% 8% / 9% 94% 6% 91%;
-  background-color: #a9d7f6;
+  height: 700px;
+  width: 200%;
+  border-radius: 30px;
+  background-color: #155263;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border: 3px solid black;
 }
 
 .result {
-  background-color: #f96d6d;
-  width: 360px;
+  background-color: #ffc93c;
+  width: 460px;
   height: 100px;
-  font-size: 25px;
+  font-size: 32px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   margin-top: 30px;
-  border-radius: 34% 39% 14% 39% / 29% 37% 43% 62%;
+  border-radius: 20px;
+  border: 3px solid black;
 }
 
 .digit:hover {
   cursor: pointer;
-  background-color: #aef5e7;
+  background-color: #455d7a;
 }
 .sign:hover {
   cursor: pointer;
-  background-color: #f16896;
+  background-color: #f95959;
 }
 
 .butoane1 {
-  background-color: #b84d69;
-  width: 350px;
-  margin-top: 8px;
+  background-color: #ff6f3c;
+  width: 450px;
+  margin-top: 15px;
   height: 55%;
-  border-radius: 89% 11% 100% 0% / 12% 91% 9% 88%;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border: 3px solid black;
 }
 
 .butoane2 {
-  background-color: #b84d69;
-  width: 350px;
+  background-color: #ff6f3c;
+  width: 450px;
   height: 15%;
-  border-radius: 89% 11% 81% 19% / 16% 71% 29% 84%;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
+  margin-top: 15px;
+  border: 3px solid black;
 }
 .butoane2 > button {
   flex: 1;
-  border-radius: 40% 60% 51% 49% / 48% 64% 36% 52%;
-  padding: 5px;
-  font-size: 16px;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 20px;
   text-align: center;
   font-weight: bold;
   font-family: monospace;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 .butoane2 > .digit {
   flex-grow: 2;
 }
 
 button {
-  border: 2px solid #8fb1e9;
+  border: 3px solid black;
 }
 h2 {
   margin-right: auto;
@@ -118,8 +120,8 @@ h2 {
   font-family: Lucida Sans Typewriter;
 }
 a {
-  text-decoration: underline brown;
-  color: #f96d6d;
+  text-decoration: underline black;
+  color: #fff;
 }
 .butoane1 {
   display: flex;
@@ -131,10 +133,10 @@ a {
 .butoane1 .digit {
   flex-basis: calc(25% - 10px);
   margin: 5px;
-  border-radius: 40% 60% 51% 49% / 48% 64% 36% 52%;
+  border-radius: 50px;
   margin-top: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   font-weight: bold;
   font-family: monospace;
